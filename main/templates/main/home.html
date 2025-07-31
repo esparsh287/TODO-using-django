@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Here are your ToDos</h1>
+{% for task in tasks %}
+ <a href="{% url 'detail' task.pk %}"> 
+  <h1>{{task.title}}</h1></a>
+  <p>{{task.desc}}</p>
+  <p>{{task.date}}</p>
+  <hr>
+{% endfor %}
+{% endblock %}
